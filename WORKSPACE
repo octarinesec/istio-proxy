@@ -29,6 +29,11 @@ bind(
     actual = "//external:ssl",
 )
 
+local_repository(
+    name = "threatservice",
+    path = "src/threatservice"
+)
+
 # When updating envoy sha manually please update the sha in istio.deps file also
 ENVOY_SHA = "fcc68f1165d0343891d3ce14c2952019fe403743"
 ENVOY_SHA256 = "44b38c68be6f80deffb26c91151d3bf7e97575d286d5316770473dc1dc2198de"

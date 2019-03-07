@@ -32,6 +32,11 @@ bind(
     actual = "//external:ssl",
 )
 
+local_repository(
+    name = "threatservice",
+    path = "src/threatservice"
+)
+
 # When updating envoy sha manually please update the sha in istio.deps file also
 #
 # Determine SHA256 `wget https://github.com/envoyproxy/envoy/archive/COMMIT.tar.gz && sha256sum COMMIT.tar.gz`

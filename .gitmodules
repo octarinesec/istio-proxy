@@ -1,0 +1,3 @@
+[submodule "src/threatservice"]
+	path = src/threatservice
+	url = https://github.com/octarinesec/threatservice.git

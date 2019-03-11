@@ -20,7 +20,7 @@
 #include "common/common/logger.h"
 
 // TODO: Needs to be manually copied from exported threatservice header when changed.
-extern "C" void ProcessPacket(char* p0, short unsigned int p1, char* p2, short unsigned int p3, unsigned int p4, void* p5, int p6, char* p7, char* p8);
+extern "C" void ProcessPacket(char* p0, short unsigned int p1, char* p2, short unsigned int p3, unsigned int p4, void* p5, int p6, char* p7);
 
 enum PACKET_FLOW {
     PACKET_FLOW_UNDEFINED = 0,

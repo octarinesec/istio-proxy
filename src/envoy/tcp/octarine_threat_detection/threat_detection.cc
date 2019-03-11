@@ -62,7 +62,7 @@ void Filter::sendToThreatService(const Network::Connection& connection, Buffer::
         ENVOY_CONN_LOG(debug, "ThreatDetection: sending to service {} bytes.", connection, slice.len_);
         ProcessPacket(const_cast<char *>(remoteIP.c_str()), remotePort, const_cast<char *>(localIP.c_str()),
                       localPort, read ? PACKET_FLOW_TO_SERVER : PACKET_FLOW_TO_CLIENT, slice.mem_, slice.len_,
-                      const_cast<char*>(peer_instance_id.c_str()), const_cast<char*>(peer_service_id.c_str()));
+                      const_cast<char*>(peer_instance_id.c_str()));
     }
 }
 

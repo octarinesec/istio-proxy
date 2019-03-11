@@ -22,6 +22,7 @@ BAZEL_BUILD_ARGS ?=
 BAZEL_TEST_ARGS ?=
 HUB ?=
 TAG ?=
+ISTIO_VER ?= test
 ifeq "$(origin CC)" "default"
 CC := clang-6.0
 endif
@@ -37,6 +38,9 @@ build:
 build_envoy:
 	CC=$(CC) CXX=$(CXX) bazel $(BAZEL_STARTUP_ARGS) build $(BAZEL_BUILD_ARGS) //src/envoy:envoy
 	@bazel shutdown
+
+build_docker: build
+	@docker/build_docker.sh $(ISTIO_VER)
 
 clean:
 	@bazel clean

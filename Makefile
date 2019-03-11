@@ -25,6 +25,7 @@ BAZEL_TARGETS ?= //...
 SANITIZER_EXCLUSIONS ?= -test/integration:mixer_fault_test
 HUB ?=
 TAG ?=
+ISTIO_VER ?= test
 ifeq "$(origin CC)" "default"
 CC := clang-7
 endif
@@ -41,6 +42,9 @@ build:
 build_envoy:
 	PATH=$(PATH) CC=$(CC) CXX=$(CXX) bazel $(BAZEL_STARTUP_ARGS) build $(BAZEL_BUILD_ARGS) //src/envoy:envoy
 	@bazel shutdown
+
+build_docker: build
+	@docker/build_docker.sh $(ISTIO_VER)
 
 clean:
 	@bazel clean
